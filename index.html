@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My Portfolio</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira%20Code:wght@300..700&family=Orbitron:wght@400;500;600;700&family=Share+Tech+Mono&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <div id="particles-js"></div>
+    <header id="site-header">
+        <div class="header-content">
+            <a href="#"><img src="images/Stefan_Uzelac_logo.png" alt="Stefan Uzelac"></a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <nav id="nav-links">
+            <div class="nav-item"><a href="#about-me">About Me</a></div>
+            <div class="nav-item"><a href="#projects">Projects</a></div>
+            <div class="nav-item"><a href="#skills">Skills</a></div>
+            <div class="nav-item"><a href="#contact">Contact Me</a></div>
+        </nav>
+    </header>
+
+    <section id="about-me" class="about-container hidden">
+        <h2 class="visually-hidden">About Me</h2>
+        <div class="about-content">
+            <div class="profile-image-container">
+                <div class="hexagon">
+                    <div class="hexTop"></div>
+                    <div class="hexBottom"></div>
+                    <img src="images/profile_pic.jpg" alt="Stefan Uzelac" class="profile-image">
+                </div>
+            </div>
+            <div class="text-content">
+                <p><span id="about-text1">Hi, I'm <strong>Stefan Uzelac</strong>, a recent graduate from Singidunum
+                        University's Faculty of Informatics, specializing in <strong>Web and Android
+                            development</strong>. I strive to create clean,
+                        user-friendly interfaces that enhance user experiences.</span></p>
+                <p><span id="about-text2">Early in my career, I'm motivated to contribute to impactful projects and
+                        achieve significant milestones.
+                        Always <strong>seeking opportunities to grow and take on new challenges</strong> in the
+                        ever-evolving world of software development.</span></p>
+                <p><span id="about-text3">When not coding, I explore emerging technologies like AI and enjoy the
+                        outdoors on my bike or
+                        pursuing fitness. Connect with me to learn more or collaborate on a project!</span></p>
+            </div>
+        </div>
+    </section>
+    <main id="projects" class="project-container hidden">
+        <h2 class="visually-hidden">Projects</h2>
+        <div class="project-grid">
+            <div class="project-content">
+                <a href="https://github.com/stefanuzelac/FitUp" target="_blank">
+                    <img src="images/FitUp_logo.png" alt="Project 1">
+                </a>
+                <div>
+                    <p class="project-title"><strong>FitUp</strong></p>
+                    <ul class="project-description">
+                        <li>A comprehensive fitness application developed using <strong>Java</strong></li>
+                        <li>Intuitive and simple user interface, offering efficient navigation.</li>
+                        <li>Currently based on <strong>Android</strong> system with portable aspirations.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+    <section id="skills" class="hidden">
+        <div class="skill-text-container">
+            <p>With several years of experience working on personal and academic projects, I have acquired a diverse set
+                of web development skills. Below is a visual representation of my proficiency in <strong>HTML</strong>,
+                <strong>CSS</strong>, and <strong>JavaScript</strong>.
+            </p>
+        </div>
+        <div class="skill-container">
+            <div class="skill">
+                <div class="skill-bar-container">
+                    <div id="bar-html" class="skill-bar html"></div>
+                    <div class="percentage" id="percentage-html"></div>
+                </div>
+                <img src="images/html.png" alt="HTML Logo">
+                <h2>HTML</h2>
+            </div>
+            <div class="skill">
+                <div class="skill-bar-container">
+                    <div id="bar-css" class="skill-bar css"></div>
+                    <div class="percentage" id="percentage-css"></div>
+                </div>
+                <img src="images/css.png" alt="CSS Logo">
+                <h2>CSS</h2>
+            </div>
+            <div class="skill">
+                <div class="skill-bar-container">
+                    <div id="bar-javascript" class="skill-bar javascript"></div>
+                    <div class="percentage" id="percentage-javascript"></div>
+                </div>
+                <img src="images/javascript.png" alt="JavaScript Logo">
+                <h2>JavaScript</h2>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="contact-container hidden">
+        <h2><strong>Let's get in touch!</strong></h2>
+        <form id="contact-form" action="/submit-form" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p id="success-message" style="display: none;">Thanks for contacting me!</p>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <a href="#"><img src="images/Stefan_Uzelac_logo.png" alt="Your Logo" class="footer-logo"></a>
+                <p>&copy; 2023 Stefan Uzelac</p>
+                <ul class="footer-nav">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <p class="icon-text"><img src="images/email_icon.png" alt="Email" class="footer-icon"><span><a
+                            href="mailto:stefanuzelac@gmail.com">stefanuzelac@gmail.com</a></span></p>
+                <p class="icon-text"><img src="images/phone_icon.png" alt="Phone" class="footer-icon"><span>+381 64 03
+                        58 057</span></p>
+                <p class="icon-text"><img src="images/location_icon.png" alt="Location"
+                        class="footer-icon"><span>Belgrade, Serbia</span></p>
+            </div>
+            <div class="footer-column">
+                <p>
+                    <a href="https://www.linkedin.com/in/stefan-uzelac/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/linkedin.png" alt="LinkedIn" class="footer-icon-social"></a>
+                    <a href="https://github.com/stefanuzelac" target="_blank" rel="noopener noreferrer">
+                        <img src="images/github.png" alt="GitHub" class="footer-icon-social"></a>
+                </p>
+                <p class="resume-link">
+                    <a href="Stefan Uzelac Resume.pdf" target="_blank" rel="noopener noreferrer">
+                        Download My Resume
+                    </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

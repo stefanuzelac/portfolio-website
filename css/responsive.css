@@ -1,0 +1,216 @@
+/* css/responsive.css */
+@import 'variables.css';
+@import 'global.css';
+@import 'header.css';
+@import 'about.css';
+@import 'projects.css';
+@import 'skills.css';
+@import 'contact.css';
+@import 'footer.css';
+
+/* Default Mobile Styles (Mobile First) */
+body {
+  font-size: 1rem;
+  /* Using relative units (rem) */
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+  height: auto;
+  /* Flexible media */
+}
+
+.skill-text-container,
+.skill-container {
+  max-width: 100%;
+}
+
+.skill-container {
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.skill-content {
+  flex-direction: column;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+  width: 100%;
+}
+
+#contact-form textarea {
+  height: 9.375rem;
+  /* 150px in rem */
+}
+
+.footer-content {
+  flex-direction: column;
+}
+
+.footer-column {
+  border-right: none;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer-column ul.footer-nav li {
+  display: block;
+  margin-bottom: 0.3125rem;
+  /* 5px in rem */
+}
+
+.footer-logo {
+  width: 2.5rem;
+  /* 40px in rem */
+}
+
+.footer-icon-social {
+  margin-right: 0.9375rem;
+  /* 15px in rem */
+}
+
+h1,
+h2,
+h3 {
+  font-size: 1.5rem;
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 37.5rem) and (max-width: 63.9375rem) {
+
+  /* 600px to 1023px in rem */
+  body {
+    font-size: 1.125rem;
+    /* 18px in rem */
+    padding: 1.25rem;
+    /* 20px in rem */
+  }
+
+  .skill-container {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  .skill-content {
+    flex-direction: row;
+    justify-content: space-around;
+    height: 18.75rem;
+    /* 300px in rem */
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    width: 75%;
+  }
+
+  #contact-form textarea {
+    height: 12.5rem;
+    /* 200px in rem */
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-column {
+    border-right: 0.0625rem solid #ccc;
+    /* 1px in rem */
+    padding: 1.25rem;
+    /* 20px in rem */
+  }
+
+  .footer-column:last-child {
+    border-right: none;
+  }
+
+  .footer-logo {
+    width: 3.125rem;
+    /* 50px in rem */
+  }
+
+  .footer-icon-social {
+    margin-right: 1.25rem;
+    /* 20px in rem */
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 2rem;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 64rem) {
+
+  /* 1024px in rem */
+  body {
+    font-size: 1.25rem;
+    /* 20px in rem */
+    padding: 1.875rem;
+    /* 30px in rem */
+  }
+
+  .skill-container {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 3rem;
+  }
+
+  .skill-content {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 25rem;
+    /* 400px in rem */
+  }
+
+  #contact-form input,
+  #contact-form textarea {
+    width: 50%;
+  }
+
+  #contact-form textarea {
+    height: 15.625rem;
+    /* 250px in rem */
+  }
+
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer-column {
+    border-right: 0.0625rem solid #ccc;
+    /* 1px in rem */
+    padding: 1.25rem;
+    /* 20px in rem */
+  }
+
+  .footer-column:last-child {
+    border-right: none;
+  }
+
+  .footer-logo {
+    width: 3.75rem;
+    /* 60px in rem */
+  }
+
+  .footer-icon-social {
+    margin-right: 1.5625rem;
+    /* 25px in rem */
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 2.5rem;
+  }
+}

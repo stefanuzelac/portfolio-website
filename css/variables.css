@@ -1,0 +1,7 @@
+/* css/variables.css */
+:root {
+  --main-bg-color: #2a3439;
+  --accent-color: #7FFF00;
+  --text-color: #d8d8d8;
+  --header-height: 5rem;
+}

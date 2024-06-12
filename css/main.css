@@ -1,0 +1,11 @@
+/* css/main.css */
+@import 'variables.css';
+@import 'global.css';
+@import 'header.css';
+@import 'about.css';
+@import 'projects.css';
+@import 'skills.css';
+@import 'contact.css';
+@import 'footer.css';
+@import 'responsive.css';
+@import 'accessibility.css';

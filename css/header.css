@@ -1,0 +1,121 @@
+@import 'variables.css';
+
+#site-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 0.2rem solid #18352fe1;
+  background-color: rgba(42, 52, 57, 0.85);
+  box-shadow: 0px 0px 10px black;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  transition: height 0.5s ease;
+  height: var(--header-height);
+}
+
+#site-header.small-header {
+  height: 3rem;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-content img {
+  max-height: 4rem;
+  max-width: 4rem;
+  border: 2px solid #55212d;
+  margin-left: 0.5rem;
+  border-radius: 10%;
+  transition: transform 0.3s, max-width 0.5s ease, max-height 0.5s ease;
+}
+
+#site-header.small-header .header-content img {
+  max-height: 2rem;
+  max-width: 2rem;
+}
+
+.header-content img:hover {
+  transform: scale(1.1);
+  border: 2px solid var(--accent-color);
+}
+
+#nav-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 70%;
+}
+
+#nav-links a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s ease, font-size 0.5s ease;
+  font-size: 1.1em;
+}
+
+#nav-links a:hover {
+  color: var(--main-bg-color);
+  background-color: var(--accent-color);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  border-radius: 3px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    background-color: rgba(42, 52, 57, 0.85);
+    z-index: 9998;
+    text-align: center;
+    transition: top 0.5s ease;
+    /* Add transition for smooth movement */
+  }
+
+  #nav-links.show {
+    display: flex;
+  }
+
+  #nav-links .nav-item {
+    margin: 1rem 0;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-right: 1rem;
+  }
+
+  .header-content {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  #site-header.small-header .hamburger span {
+    width: 20px;
+  }
+}

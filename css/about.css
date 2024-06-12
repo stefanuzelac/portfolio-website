@@ -1,0 +1,51 @@
+/* css/about.css */
+@import 'variables.css';
+
+#about-me {
+  margin: 10rem 0;
+}
+
+#about-me p {
+  font-weight: 400;
+}
+
+.about-container .profile-image-container {
+  width: 15.625rem;
+  height: 15.625rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 0.3rem solid var(--main-bg-color);
+  margin: 5rem auto 5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: scaleUp 1s ease-out both;
+}
+
+.about-container .profile-image-container:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0rem 0rem 2rem #60c000;
+  border-color: #60c000;
+}
+
+.about-container .profile-image-container .profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-content {
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text-content p {
+  padding-top: 1em;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+}
+
+.text-content span {
+  animation: fadeIn 2s;
+}

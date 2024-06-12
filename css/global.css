@@ -1,0 +1,95 @@
+/* css/global.css */
+@import 'variables.css';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* Set padding to 0 to ensure content reaches edges */
+  font-family: 'Orbitron', sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: #f1f1f1;
+  background: transparent;
+  color: var(--text-color);
+  position: relative;
+}
+
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: linear-gradient(to right, #1b2125, #2b5248, #1b2125);
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #e7e9e9;
+  border-left: 1px solid #888;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #18352fe1;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.visible {
+  animation: fadeIn 1s forwards;
+  visibility: visible;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+strong {
+  font-weight: 900;
+  color: var(--accent-color);
+}
