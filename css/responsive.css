@@ -1,4 +1,4 @@
-/* css/responsive.css */
+/* responsive.css */
 @import 'variables.css';
 @import 'global.css';
 @import 'header.css';
@@ -11,7 +11,7 @@
 /* Default Mobile Styles (Mobile First) */
 body {
   font-size: 1rem;
-  /* Using relative units (rem) */
+  overflow-x: hidden;
 }
 
 img,
@@ -19,12 +19,12 @@ video,
 iframe {
   max-width: 100%;
   height: auto;
-  /* Flexible media */
 }
 
 .skill-text-container,
 .skill-container {
   max-width: 100%;
+  padding: 1rem;
 }
 
 .skill-container {
@@ -46,7 +46,6 @@ iframe {
 
 #contact-form textarea {
   height: 9.375rem;
-  /* 150px in rem */
 }
 
 .footer-content {
@@ -62,17 +61,14 @@ iframe {
 .footer-column ul.footer-nav li {
   display: block;
   margin-bottom: 0.3125rem;
-  /* 5px in rem */
 }
 
 .footer-logo {
   width: 2.5rem;
-  /* 40px in rem */
 }
 
 .footer-icon-social {
   margin-right: 0.9375rem;
-  /* 15px in rem */
 }
 
 h1,
@@ -81,15 +77,66 @@ h3 {
   font-size: 1.5rem;
 }
 
-/* Tablet Styles */
-@media only screen and (min-width: 37.5rem) and (max-width: 63.9375rem) {
+/* Responsive Styles for Mobile */
+@media only screen and (max-width: 768px) {
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    background-color: rgba(42, 52, 57, 0.85);
+    z-index: 9998;
+    text-align: center;
+    transition: top 0.5s ease;
+  }
 
-  /* 600px to 1023px in rem */
+  #nav-links.show {
+    display: flex;
+  }
+
+  #nav-links .nav-item {
+    margin: 1rem 0;
+  }
+
+  .hamburger {
+    display: flex;
+    margin-right: 1rem;
+  }
+
+  .header-content {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  #site-header.small-header .hamburger span {
+    width: 20px;
+  }
+
+  /* Adjusting project content for mobile */
+  .project-grid {
+    flex-direction: column;
+  }
+
+  .project-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .project-content div {
+    text-align: center;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
   body {
     font-size: 1.125rem;
-    /* 18px in rem */
     padding: 1.25rem;
-    /* 20px in rem */
   }
 
   .skill-container {
@@ -102,7 +149,6 @@ h3 {
     flex-direction: row;
     justify-content: space-around;
     height: 18.75rem;
-    /* 300px in rem */
   }
 
   #contact-form input,
@@ -112,7 +158,6 @@ h3 {
 
   #contact-form textarea {
     height: 12.5rem;
-    /* 200px in rem */
   }
 
   .footer-content {
@@ -122,9 +167,7 @@ h3 {
 
   .footer-column {
     border-right: 0.0625rem solid #ccc;
-    /* 1px in rem */
     padding: 1.25rem;
-    /* 20px in rem */
   }
 
   .footer-column:last-child {
@@ -133,12 +176,10 @@ h3 {
 
   .footer-logo {
     width: 3.125rem;
-    /* 50px in rem */
   }
 
   .footer-icon-social {
     margin-right: 1.25rem;
-    /* 20px in rem */
   }
 
   h1,
@@ -149,14 +190,10 @@ h3 {
 }
 
 /* Desktop Styles */
-@media only screen and (min-width: 64rem) {
-
-  /* 1024px in rem */
+@media only screen and (min-width: 1024px) {
   body {
     font-size: 1.25rem;
-    /* 20px in rem */
     padding: 1.875rem;
-    /* 30px in rem */
   }
 
   .skill-container {
@@ -169,7 +206,6 @@ h3 {
     flex-direction: row;
     justify-content: space-between;
     height: 25rem;
-    /* 400px in rem */
   }
 
   #contact-form input,
@@ -179,7 +215,6 @@ h3 {
 
   #contact-form textarea {
     height: 15.625rem;
-    /* 250px in rem */
   }
 
   .footer-content {
@@ -189,9 +224,7 @@ h3 {
 
   .footer-column {
     border-right: 0.0625rem solid #ccc;
-    /* 1px in rem */
     padding: 1.25rem;
-    /* 20px in rem */
   }
 
   .footer-column:last-child {
@@ -200,12 +233,10 @@ h3 {
 
   .footer-logo {
     width: 3.75rem;
-    /* 60px in rem */
   }
 
   .footer-icon-social {
     margin-right: 1.5625rem;
-    /* 25px in rem */
   }
 
   h1,

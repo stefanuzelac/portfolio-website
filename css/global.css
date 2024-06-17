@@ -1,20 +1,24 @@
-/* css/global.css */
+/* global.css */
 @import 'variables.css';
 
-html {
-  scroll-behavior: smooth;
-}
-
+html,
 body {
   margin: 0;
   padding: 0;
-  /* Set padding to 0 to ensure content reaches edges */
+  width: 100%;
+  height: auto;
   font-family: 'Orbitron', sans-serif;
   scrollbar-width: thin;
   scrollbar-color: #f1f1f1;
   background: transparent;
   color: var(--text-color);
-  position: relative;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 #particles-js {
@@ -22,7 +26,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   z-index: -1;
   background: linear-gradient(to right, #1b2125, #2b5248, #1b2125);
 }

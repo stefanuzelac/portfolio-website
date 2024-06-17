@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             header.classList.remove("small-header");
         }
         updateNavLinksPosition();
+        navLinksContainer.classList.remove('show'); // Close the nav menu on scroll
     });
 
     const form = document.getElementById('contact-form');
@@ -100,73 +101,44 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     document.querySelector('#skills').addEventListener('transitionend', (event) => {
-        // Check if the target has 'visible' class
         if (event.target.classList.contains('visible')) {
             loadSkillBars();
         }
     });
 
-    // New code for animating sections
     const sections = document.querySelectorAll('.hidden');
-    let maxHeight = 0;
 
     sections.forEach((section) => {
-        const contentHeight = section.scrollHeight; // this gives the actual content height
-        if (contentHeight > maxHeight) {
-            maxHeight = contentHeight;
-        }
-    });
-
-    sections.forEach((section) => {
-        if (window.innerWidth <= 768) {
-            // Check if the content of the section exceeds the viewport height
-            if (section.scrollHeight > window.innerHeight) {
-                section.style.height = 'auto'; // let it be its natural height
-            } else {
-                section.style.height = '100vh'; // occupy full viewport height
-            }
-        } else {
-            section.style.height = `100vh`; // set to max content height
-        }
+        section.style.height = 'auto'; // Ensure sections are auto height
     });
 
     const sectionObserver = new IntersectionObserver(function (entries, observer) {
         entries.forEach(entry => {
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-                // Clear any existing timeout
+            if (entry.isIntersecting) {
                 clearTimeout(entry.target.timeoutID);
-                // Immediately start fading in
                 entry.target.classList.remove('hidden', 'fadeOut');
                 entry.target.classList.add('visible');
-
-                // If the visible section is the #skills section, load the skill bars
                 if (entry.target.id === 'skills') {
                     loadSkillBars();
                 }
-
-            } else if (!entry.isIntersecting || entry.intersectionRatio < 0.5) {
-                // Clear any existing timeout
+            } else {
                 clearTimeout(entry.target.timeoutID);
-                // Start fading out after a delay
                 entry.target.timeoutID = setTimeout(() => {
                     entry.target.classList.remove('visible');
                     entry.target.classList.add('fadeOut');
-                }, 500); // Delay before fade out begins, adjust as needed
+                }, 500);
             }
         });
     }, {
-        threshold: [0, 0.5, 1] // You may need to adjust these threshold values
+        threshold: [0.1, 0.25, 0.5]
     });
 
-    // Observe each section
     sections.forEach(section => {
         sectionObserver.observe(section);
     });
 
-    // Retrieve the CSS variable value for accent color
     const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--accent-color').trim();
 
-    // Set up the particles effect
     particlesJS('particles-js', {
         "particles": {
             "number": {
@@ -252,5 +224,23 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         },
         "retina_detect": true
+    });
+
+    // Adding event listeners to each skill image
+    const skillImages = document.querySelectorAll('.skill img');
+    skillImages.forEach((img) => {
+        img.addEventListener('click', function () {
+            if (this.classList.contains('rotated')) {
+                this.classList.remove('rotated');
+                this.style.transform = 'none';
+            } else {
+                skillImages.forEach((image) => {
+                    image.classList.remove('rotated');
+                    image.style.transform = 'none';
+                });
+                this.classList.add('rotated');
+                this.style.transform = 'rotate(360deg)';
+            }
+        });
     });
 });

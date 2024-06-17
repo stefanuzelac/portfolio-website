@@ -1,3 +1,4 @@
+/* header.css */
 @import 'variables.css';
 
 #site-header {
@@ -12,8 +13,8 @@
   position: fixed;
   top: 0;
   z-index: 9999;
-  transition: height 0.5s ease;
   height: var(--header-height);
+  transition: height 0.5s ease;
 }
 
 #site-header.small-header {
@@ -78,44 +79,4 @@
   background: white;
   margin: 4px 0;
   border-radius: 3px;
-}
-
-/* Responsive Styles */
-@media only screen and (max-width: 768px) {
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: var(--header-height);
-    left: 0;
-    background-color: rgba(42, 52, 57, 0.85);
-    z-index: 9998;
-    text-align: center;
-    transition: top 0.5s ease;
-    /* Add transition for smooth movement */
-  }
-
-  #nav-links.show {
-    display: flex;
-  }
-
-  #nav-links .nav-item {
-    margin: 1rem 0;
-  }
-
-  .hamburger {
-    display: flex;
-    margin-right: 1rem;
-  }
-
-  .header-content {
-    width: 100%;
-    justify-content: space-between;
-    padding: 0 1rem;
-  }
-
-  #site-header.small-header .hamburger span {
-    width: 20px;
-  }
 }
