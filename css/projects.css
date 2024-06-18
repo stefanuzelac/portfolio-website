@@ -10,10 +10,10 @@
 
 .project-grid {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
   width: 90%;
   min-height: 80vh;
   margin: 0 auto;
@@ -33,12 +33,14 @@
 
 .project-content {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10rem;
+  gap: 1rem;
+  padding: 1.25rem;
 }
 
 .project-content div {
-  text-align: left;
+  text-align: center;
 }
 
 .project-description {

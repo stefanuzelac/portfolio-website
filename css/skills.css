@@ -1,3 +1,4 @@
+/* css/skills.css */
 @import 'variables.css';
 
 #skills {
@@ -16,9 +17,9 @@
 
 .skill-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 60%;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   margin-top: 2rem;
 }
 
@@ -28,18 +29,21 @@
 
 .skill-content {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  height: 300px;
+  width: 100%;
 }
 
 .skill-bar-container {
-  width: 50px;
+  width: 3rem;
+  max-width: 300px;
+  /* Optional: set a max-width */
   height: 200px;
   background-color: #2a34397f;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  margin-top: 1rem;
 }
 
 .skill-bar-container::after {
@@ -68,11 +72,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .skill h2 {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .skill img {
@@ -81,10 +87,9 @@
   margin-right: auto;
   width: 50px;
   height: 50px;
-  margin-top: 20px;
+  margin-top: 1rem;
   transition: transform 1s ease;
   transform-origin: center;
-  /* Ensure the rotation happens around the center */
 }
 
 .skill img:hover {

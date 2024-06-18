@@ -1,8 +1,9 @@
-/* css/contact.css */
 @import 'variables.css';
 
 .contact-container {
   text-align: center;
+  padding: 1rem;
+  /* Added padding for left, right, and bottom */
 }
 
 #contact h2 {
@@ -23,21 +24,22 @@
 
 #contact-form input,
 #contact-form textarea {
-  width: 50%;
+  width: calc(100% - 2rem);
   padding: 0.5rem;
   border: 0.1rem solid black;
-  margin-top: 0.5rem;
+  margin: 0.5rem 1rem;
   transition: border-color 0.5s ease, box-shadow 0.5s ease;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   resize: none;
   background-color: #2a34397f;
   color: white;
   font-family: 'Orbitron';
+  box-sizing: border-box;
 }
 
 #contact-form textarea {
-  height: 200px;
-  width: 100%;
+  height: 9.375rem;
+  width: calc(100% - 2rem);
   background-color: #2a34397f;
   color: white;
 }

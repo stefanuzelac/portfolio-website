@@ -1,9 +1,7 @@
-/* header.css */
 @import 'variables.css';
 
 #site-header {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
@@ -15,23 +13,26 @@
   z-index: 9999;
   height: var(--header-height);
   transition: height 0.5s ease;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 #site-header.small-header {
   height: 3rem;
+  padding: 0 1rem;
 }
 
 .header-content {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .header-content img {
   max-height: 4rem;
   max-width: 4rem;
   border: 2px solid #55212d;
-  margin-left: 0.5rem;
   border-radius: 10%;
   transition: transform 0.3s, max-width 0.5s ease, max-height 0.5s ease;
 }
@@ -47,10 +48,24 @@
 }
 
 #nav-links {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  background-color: rgba(42, 52, 57, 0.85);
+  z-index: 9998;
+  text-align: center;
+  transition: top 0.5s ease;
+}
+
+#nav-links.show {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 70%;
+}
+
+#nav-links .nav-item {
+  margin: 1rem 0;
 }
 
 #nav-links a {
@@ -67,10 +82,10 @@
 }
 
 .hamburger {
-  display: none;
+  display: flex;
   flex-direction: column;
   cursor: pointer;
-  margin-right: 1rem;
+  margin-left: auto;
 }
 
 .hamburger span {
